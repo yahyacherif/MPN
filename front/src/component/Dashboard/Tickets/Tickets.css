@@ -1,0 +1,12 @@
+.fb_link{
+    color: #000;
+    word-wrap: break-word;
+}
+.fb_link:hover{
+    color: #000;
+}
+@media screen and (max-width:960px) {
+.css-19dnski{
+    width:100%!important;
+}
+}
