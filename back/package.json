@@ -19,6 +19,7 @@
     "mysql2": "^2.3.3",
     "nodemailer": "^6.8.0",
     "nodemailer-express-handlebars": "^5.0.0",
+    "nodemailer-smtp-transport": "^2.7.4",
     "sequelize": "^6.21.6",
     "smtp": "^0.1.4"
   },

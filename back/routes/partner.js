@@ -9,14 +9,18 @@ const hbs = require('nodemailer-express-handlebars');
 
 nodemailer.sendmail = true;
 let transporter = nodemailer.createTransport({
-    host: "mail.spglab.local",
+    host: "mail.spg.com.tn",
     port: 25,
     type:"SMTP",
     secure: false,
     auth: {
         user: process.env.EMAIL,
-        pass: process.env.PASSWORD,
+        pass: process.env.KEY,
     },
+    tls: {
+        ciphers: 'SSLv3',
+        rejectUnauthorized: false
+    }
 });
 
 transporter.use('compile', hbs({
@@ -39,7 +43,7 @@ router.post('/create', authenticateJWT,async(req,res)=>{
 
         await newPartner.save()
         let mailOptions = {
-            from: '"SPGLAB" <yahya.cherif@spglab.com.tn>',
+            from: '"SPGLAB" <yahya.cherif@spg.com.tn>',
             to: 'yahya.cherif@spg.com.tn',
             subject: 'Nouvelle Demande de réservation',
             html : `<div><h3>Détails</h3><br><strong>Email : </strong>`,
