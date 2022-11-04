@@ -10,7 +10,7 @@ const hbs = require('nodemailer-express-handlebars');
 nodemailer.sendmail = true;
 let transporter = nodemailer.createTransport({
     host: "mail.spg.com.tn",
-    port: 25,
+    port: 465,
     type:"SMTP",
     secure: false,
     auth: {
